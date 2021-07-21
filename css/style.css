@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book{
+    --width: 150px;
+    --height: 200px;
+    --depth: 50px;
+    height: var(--height);
+    width: var(--width);
+ 
+    position: relative;
+    transform: rotateX(24deg) rotateY(35deg);
+    transform-style: preserve-3d;
+}
+.side{
+    background-color: rgba(255, 0, 0, 0.329);
+    border: 1px solid black;
+    position: absolute;
+}
+.side:nth-of-type(1),
+.side:nth-of-type(2){
+    --cofficient: -0.5;
+    height: var(--height);
+    width: var(--width);
+    transform: translate3d(0,0, calc(var(--depth)* var(--cofficient)));
+}
+.side:nth-of-type(2){
+    --cofficient:0.5;
+}
+.side:nth-of-type(3),
+.side:nth-of-type(4){
+    --rotation:90deg;
+    height: var(--height);
+    width: var(--depth);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(var(--rotation)) translate3d(0, 0, calc(var(--width)*0.5));
+}
+.side:nth-of-type(4){
+    --rotation:-90deg;
+}
+.side:nth-of-type(5),
+.side:nth-of-type(6){
+    --rotation: -90deg;
+    height: var(--depth);
+    width: var(--width);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotatex(var(--rotation)) translate3d(0, 0, calc(var(--height)*-0.5));
+}
+.side:nth-of-type(6){
+    --rotation:90deg;
+}
