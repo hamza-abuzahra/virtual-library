@@ -15,9 +15,8 @@ body{
     --depth: 50px;
     height: var(--height);
     width: var(--width);
- 
     position: relative;
-    transform: rotateX(24deg) rotateY(35deg);
+    transform: rotateX(10deg) rotateY(85deg);
     transform-style: preserve-3d;
 }
 .side{
@@ -58,4 +57,8 @@ body{
 }
 .side:nth-of-type(6){
     --rotation:90deg;
+}
+.book:hover{
+    transform: rotate3d(0, 0, 0, 70deg) scale(200%);
+    transition: all 2s;
 }
