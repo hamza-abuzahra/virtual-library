@@ -1,0 +1,22 @@
+:root {
+  --shelf-color: #383333fd;
+  --background: #080808;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--background);
+}
+.shelf {
+  display: inline-block;
+  background-color: var(--shelf-color);
+  height: 10px;
+  width: 50%;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  border-radius: 3px;
+}
