@@ -157,7 +157,7 @@ body {
 .book:hover,
 .book2:hover,
 .book3:hover {
-  transform: rotateX(-15deg) rotateY(10deg);
+  transform: rotateX(-15deg) rotateY(-10deg);
   z-index: 2;
 }
 /* ------------------------------------------------------------- */
