@@ -1,20 +1,114 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c8cde989c5.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="shelf"></div>
-    <div class="book">
-      <div class="top"></div>
-      <div class="bottom"></div>
-      <div class="right"></div>
-      <div class="left"></div>
-      <div class="front"></div>
-      <div class="back"></div>
+    <i class="fas fa-plus addbtn"></i>
+    <div class="shelf">
+      <div class="cluster">
+        <div class="book">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+      </div>
+      <div class="cluster">
+        <div class="book2">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+        <div class="book">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+      </div>
     </div>
-    <!-- <div class="shelf"></div> -->
+    <div class="shelf-body"></div>
+
+    <!-- --------------------------------------- -->
+
+    <div class="shelf">
+      <div class="cluster">
+        <div class="book">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+        <div class="book2">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+      </div>
+      <div class="cluster">
+        <div class="book">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+        <div class="book2">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+      </div>
+    </div>
+    <div class="shelf-body"></div>
+
+    <div class="add-menu">
+      <div class="cluster">
+        <p>Book Name</p>
+        <input type="text" id="book-name" placeholder="Book Name" />
+      </div>
+      <div class="cluster">
+        <p>front cover</p>
+        <input type="file" id="front-cover" placeholder="upload front cover" />
+        <p>back cover</p>
+        <input type="file" id="back-cover" placeholder="upload back cover" />
+        <p>side cover</p>
+        <input type="file" id="side-cover" placeholder="upload side cover" />
+      </div>
+      <div class="cluster">
+        <p>dimensions</p>
+        <input type="number" id="height" placeholder="height in inches" />
+        <input type="number" id="width" placeholder="width in inches" />
+        <input type="number" id="depth" placeholder="depth in inches" />
+      </div>
+      <div class="cluster">
+        <button class="create-btn">New Book</button>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
   </body>
 </html>

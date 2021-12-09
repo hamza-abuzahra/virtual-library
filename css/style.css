@@ -1,22 +1,187 @@
-:root {
-  --shelf-color: #383333fd;
-  --background: #080808;
-}
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 body {
-  background: var(--background);
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 45, 45);
 }
+
+/* ------------------------------------------------------- */
 .shelf {
-  display: inline-block;
-  background-color: var(--shelf-color);
+  margin-top: 10px;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 80%;
+}
+.cluster {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.shelf-body {
+  width: 80%;
   height: 10px;
-  width: 50%;
+  background-color: rgb(71, 16, 16);
+}
+.book,
+.book2,
+.book3 {
+  --width: 1.3in;
+  --height: 1.975in;
+  --depth: 0.3in;
+  height: var(--height);
+  width: var(--depth);
+  position: relative;
+  /* transform: rotateY(-80deg); */
+  transform-style: preserve-3d;
+  transition: 0.8s all;
+  z-index: 0;
+}
+.book2 {
+  --width: 1.375in;
+  --height: 2.1in;
+  --depth: 0.225in;
+}
+.book2 .side:nth-of-type(1) {
+  background-image: url(./images/seven\ habits\ of\ highly\ effective\ poeple\ book\ side\ cover.jpg);
+  background-position: center;
+}
+.book2 .side:nth-of-type(4) {
+  background-image: url(./images/seven\ habits\ of\ highly\ effective\ poeple\ book\ cover.jpg);
+  background-size: cover;
+}
+.book2 .side:nth-of-type(3) {
+  background-image: url(./images/seven\ habits\ of\ highly\ effective\ poeple\ book\ back\ cover.jpg);
+  background-size: cover;
+}
+.book3 {
+  --width: 90px;
+  --height: 170px;
+  --depth: 45px;
+}
+/* .second {
+  transform: translateX(-200px) rotateY(-80deg);
+  z-index: 0;
+} */
+.side {
   position: absolute;
-  top: 35%;
-  left: 25%;
-  border-radius: 3px;
+}
+/* .second .side {
+  background-color: blue;
+  z-index: inherit;
+} */
+/* --------------------------------------------------------- */
+.side:nth-of-type(1),
+.side:nth-of-type(2) {
+  --cofficient: 0.5;
+  height: var(--height);
+  width: var(--depth);
+  transform: translate3d(0, 0, calc(var(--width) * var(--cofficient)));
+}
+.side:nth-of-type(1) {
+  background-image: url(./images/a\ thousand\ splendind\ suns\ book\ side\ cover.jpg);
+  background-position: center;
+  background-size: var(--depth) var(--height);
+}
+.side:nth-of-type(2) {
+  --cofficient: -0.5;
+  background-image: linear-gradient(
+    90deg,
+    #a3a07d 25%,
+    #c7af7b 25%,
+    #c7af7b 50%,
+    #a3a07d 50%,
+    #a3a07d 75%,
+    #c7af7b 75%,
+    #c7af7b 100%
+  );
+  background-size: 8px 8px;
+}
+.side:nth-of-type(4) {
+  background-image: url(./images/a\ thousand\ spledidn\ suns\ book\ cover.jpg);
+  background-size: contain;
+}
+.side:nth-of-type(3) {
+  background-image: url(./images/a\ thousand\ spledidn\ suns\ book\ back\ cover.jpg);
+  background-size: contain;
+}
+/* --------------------------------------------------------- */
+.side:nth-of-type(3),
+.side:nth-of-type(4) {
+  --rotation: -90deg;
+  --cofficient: 0.5;
+  height: var(--height);
+  width: var(--width);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateY(var(--rotation))
+    translateZ(calc(var(--depth) * var(--cofficient)));
+}
+.side:nth-of-type(4) {
+  --rotation: 90deg;
+}
+/* --------------------------------------------------------- */
+
+.side:nth-of-type(5),
+.side:nth-of-type(6) {
+  --rotation: -90deg;
+  height: var(--depth);
+  width: var(--width);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateX(var(--rotation))
+    rotate(var(--rotation)) translate3d(0, 0, calc(var(--height) * -0.5));
+  background-image: linear-gradient(
+    180deg,
+    #a3a07d 25%,
+    #c7af7b 25%,
+    #c7af7b 50%,
+    #a3a07d 50%,
+    #a3a07d 75%,
+    #c7af7b 75%,
+    #c7af7b 100%
+  );
+  background-size: 8px 8px;
+}
+.side:nth-of-type(6) {
+  --rotation: 90deg;
+}
+/* --------------------------------------------------------- */
+.book:hover,
+.book2:hover,
+.book3:hover {
+  transform: rotateX(-15deg) rotateY(10deg);
+  z-index: 2;
+}
+/* ------------------------------------------------------------- */
+.addbtn {
+  font-size: 20px;
+  background-color: rgba(245, 245, 220, 0.466);
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.75s all;
+}
+.addbtn:hover {
+  background-color: rgba(245, 245, 220, 0.9);
+}
+/* ---------------------------------------------------------------- */
+.add-menu {
+  position: absolute;
+  background-color: rgba(245, 245, 220, 0.9);
+  height: 35%;
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.hidden {
+  display: none;
 }
